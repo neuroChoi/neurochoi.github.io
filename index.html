@@ -60,9 +60,14 @@
   nav a {
     color: var(--muted); text-decoration: none;
     font-size: 0.9rem; font-weight: 500; white-space: nowrap;
+    padding-bottom: 2px; border-bottom: 2px solid transparent;
   }
-  nav a:first-child { color: var(--ink); font-weight: 600; margin-right: auto; }
+  nav a.brand { color: var(--ink); font-weight: 600; margin-right: auto; border-bottom: none; }
   nav a:hover { color: var(--accent); }
+  nav a.on { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .page { display: none; padding-bottom: 24px; }
+  .page.active { display: block; }
 
   header.hero { padding: 64px 0 48px; }
   .monogram {
@@ -70,7 +75,7 @@
     background: var(--accent-soft); color: var(--accent);
     display: flex; align-items: center; justify-content: center;
     font-family: "Fraunces", Georgia, serif;
-    font-size: 2rem; font-weight: 600;
+    font-size: 1.9rem; font-weight: 600;
     margin-bottom: 24px;
   }
   h1 {
@@ -90,7 +95,8 @@
   }
   .links a:hover { border-color: var(--accent); color: var(--accent); }
 
-  section { padding: 40px 0; border-top: 1px solid var(--line); }
+  section { padding: 40px 0; }
+  .page section + section { border-top: 1px solid var(--line); }
   h2 {
     font-family: "Fraunces", Georgia, serif;
     font-weight: 500; font-size: 1.45rem;
@@ -124,12 +130,6 @@
     padding: 4px 12px; border-radius: 999px;
   }
 
-  .note {
-    background: var(--accent-soft); border-radius: 10px;
-    padding: 14px 18px; font-size: 0.9rem; color: var(--ink);
-    margin-top: 24px;
-  }
-
   footer { padding: 36px 0 48px; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--line); }
 
   @media (max-width: 560px) {
@@ -142,129 +142,169 @@
 
 <nav>
   <div class="wrap">
-    <a href="#top">Heejae</a>
-    <a href="#research">Research</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
+    <a href="#profile" class="brand" data-page="profile">Heejae Choi</a>
+    <a href="#research" data-page="research">Research</a>
+    <a href="#experience" data-page="experience">Experience</a>
+    <a href="#education" data-page="education">Education</a>
+    <a href="#contact" data-page="contact">Contact</a>
   </div>
 </nav>
 
-<div class="wrap" id="top">
+<div class="wrap">
 
-  <header class="hero">
-    <div class="monogram">HC</div>
-    <h1>Heejae Choi</h1>
-    <p class="role">PhD Student in Neuroscience</p>
-    <p class="role"><a href="https://sites.wustl.edu/cpslab/" target="_blank" rel="noopener">Padoa-Schioppa Lab</a>, Washington University in St. Louis</p>
-    <div class="links">
-      <a href="https://www.linkedin.com/in/heejae-choi-neuro/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/neuroChoi" target="_blank" rel="noopener">GitHub</a>
-      <a href="mailto:c.heejae@wustl.edu">Email</a>
-    </div>
-  </header>
+  <!-- ===================== PROFILE ===================== -->
+  <div class="page active" id="profile">
+    <header class="hero">
+      <div class="monogram">HC</div>
+      <h1>Heejae Choi</h1>
+      <p class="role">PhD Student in Neuroscience</p>
+      <p class="role"><a href="https://sites.wustl.edu/padoaschioppalab/" target="_blank" rel="noopener">Padoa-Schioppa Lab</a>, Washington University in St. Louis</p>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/heejae-choi-neuro/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/neuroChoi" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:c.heejae@wustl.edu">Email</a>
+      </div>
+    </header>
+    <section>
+      <p class="lede">I study where subjective value is represented in the primate brain, focusing on the interface between visual processing and economic choice.</p>
+    </section>
+  </div>
 
-  <section>
-    <p class="lede">I study where subjective value is represented in the primate brain, focusing on the interface between visual processing and economic choice.</p>
-  </section>
+  <!-- ===================== RESEARCH ===================== -->
+  <div class="page" id="research">
+    <section>
+      <h2>Research</h2>
+      <p>My dissertation investigates whether subjective value is represented in the <strong>inferotemporal cortex (IT)</strong>, a high-level visual area upstream of the <strong>orbitofrontal cortex (OFC)</strong>. While OFC is well known for encoding the value of choice options, it remains unclear how far upstream value-related signals can be found in the cortical processing hierarchy.</p>
+      <p>Using single-unit electrophysiology in macaques performing economic choice tasks, I examine whether IT neurons encode subjective value and characterize how these signals relate to the region's representations of visual features, quantity, and spatial information. I also compare value-related activity in IT and OFC to investigate where along this pathway value signals are represented during choice.</p>
+      <div class="tags" style="margin-top:22px">
+        <span>Neuroeconomics</span>
+        <span>NHP electrophysiology</span>
+        <span>Value-based decision making</span>
+        <span>OFC</span>
+        <span>Inferotemporal cortex (IT)</span>
+      </div>
+    </section>
+    <section>
+      <h2>Skills</h2>
+      <div class="tags">
+        <span>Non-human primate &amp; mouse electrophysiology (multichannel recordings)</span>
+        <span>Spike sorting (Plexon OFS)</span>
+        <span>Mouse/rat in vivo calcium imaging</span>
+        <span>Optogenetics</span>
+        <span>Behavioral task design</span>
+        <span>Tracer injection surgery</span>
+        <span>MATLAB</span>
+        <span>Python (in progress)</span>
+      </div>
+    </section>
+  </div>
 
-  <section id="research">
-    <h2>Research</h2>
-    <p>My dissertation asks whether the <strong>inferotemporal cortex (ITC)</strong> encodes offer value upstream of the <strong>orbitofrontal cortex (OFC)</strong> during economic choice. Using single-unit electrophysiology in macaques performing a two-alternative juice-choice task, I record from ITC and OFC to test where visual object identity is first transformed into a value signal.</p>
-    <p>In parallel, I characterize quantity and spatial tuning of anterior ITC neurons, examining how value-related signals interact with the region's canonical visual selectivity.</p>
-    <div class="tags">
-      <span>Neuroeconomics</span>
-      <span>NHP electrophysiology</span>
-      <span>Value-based decision making</span>
-      <span>OFC</span>
-      <span>Inferotemporal cortex</span>
-    </div>
-  </section>
+  <!-- ===================== EXPERIENCE ===================== -->
+  <div class="page" id="experience">
+    <section>
+      <h2>Experience</h2>
+      <div class="row">
+        <div class="when">2020 – 2021</div>
+        <div class="what">
+          <h3>Clinical Operations Associate</h3>
+          <div class="where">Celltrion Inc., Incheon, South Korea</div>
+          <div class="detail">Phase 3 clinical trial operations under GCP: protocol and SOP compliance, CRO oversight and progress monitoring, regulatory approval support, trial documentation and investigator meetings, and inspection readiness through study closeout.</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">2018 – 2019</div>
+        <div class="what">
+          <h3>Research Intern</h3>
+          <div class="where">Brain Science Institute, Korea Institute of Science and Technology (KIST), Seoul</div>
+          <div class="detail">In vivo deep-brain calcium imaging of GPe and STN in freely moving mice using a head-mounted miniaturized microscope; optogenetic behavioral experiments in a Parkinson's disease model; immunohistochemistry with confocal and two-photon imaging.</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">2015 – 2017</div>
+        <div class="what">
+          <h3>Honors Researcher &amp; Research Assistant</h3>
+          <div class="where">Translational Research in Affective Disorders Lab (Dr. Michael Treadway), Emory University</div>
+          <div class="detail">Human behavioral studies of model-based reinforcement learning and cost–benefit decision making; data analysis in MATLAB and R; honors thesis defended with high honors.</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">2015</div>
+        <div class="what">
+          <h3>Summer Research Intern</h3>
+          <div class="where">Clinical Cognitive Neuroscience Center, Seoul National University Hospital</div>
+          <div class="detail">ERP and fMRI studies in psychiatric and high-risk populations; MRI processing with FreeSurfer; independent research proposal on cerebellar volume in OCD.</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">2014</div>
+        <div class="what">
+          <h3>Summer Research Intern</h3>
+          <div class="where">Behavioral Psychology Lab, Yonsei University</div>
+          <div class="detail">Behavioral intervention research for autism spectrum disorders, including usability assessment of a smartphone-based eye-contact training application.</div>
+        </div>
+      </div>
+    </section>
+  </div>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="row">
-      <div class="when">2020 – 2021</div>
-      <div class="what">
-        <h3>Clinical Operations Associate</h3>
-        <div class="where">Celltrion Inc., Incheon, South Korea</div>
-        <div class="detail">Phase 3 clinical trial operations under GCP: protocol and SOP compliance, CRO oversight and progress monitoring, regulatory approval support, trial documentation and investigator meetings, and inspection readiness through study closeout.</div>
+  <!-- ===================== EDUCATION ===================== -->
+  <div class="page" id="education">
+    <section>
+      <h2>Education</h2>
+      <div class="row">
+        <div class="when">2021 – Present</div>
+        <div class="what">
+          <h3>PhD, Neuroscience</h3>
+          <div class="where">Washington University in St. Louis — Advisor: Dr. Camillo Padoa-Schioppa</div>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="when">2018 – 2019</div>
-      <div class="what">
-        <h3>Research Intern</h3>
-        <div class="where">Brain Science Institute, Korea Institute of Science and Technology (KIST), Seoul</div>
-        <div class="detail">In vivo deep-brain calcium imaging of GPe and STN in freely moving mice using a head-mounted miniaturized microscope; optogenetic behavioral experiments in a Parkinson's disease model; immunohistochemistry with confocal and two-photon imaging.</div>
+      <div class="row">
+        <div class="when">2013 – 2017</div>
+        <div class="what">
+          <h3>BS, Neuroscience &amp; Behavioral Biology and Psychology</h3>
+          <div class="where">Emory University — Double major, graduated with High Honors</div>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="when">2015 – 2017</div>
-      <div class="what">
-        <h3>Honors Researcher &amp; Research Assistant</h3>
-        <div class="where">Translational Research in Affective Disorders Lab (Dr. Michael Treadway), Emory University</div>
-        <div class="detail">Human behavioral studies of model-based reinforcement learning and cost–benefit decision making; data analysis in MATLAB and R; honors thesis defended with high honors.</div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="when">2015</div>
-      <div class="what">
-        <h3>Summer Research Intern</h3>
-        <div class="where">Clinical Cognitive Neuroscience Center, Seoul National University Hospital</div>
-        <div class="detail">ERP and fMRI studies in psychiatric and high-risk populations; MRI processing with FreeSurfer; independent research proposal on cerebellar volume in OCD.</div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="when">2014</div>
-      <div class="what">
-        <h3>Summer Research Intern</h3>
-        <div class="where">Behavioral Psychology Lab, Yonsei University</div>
-        <div class="detail">Behavioral intervention research for autism spectrum disorders, including usability assessment of a smartphone-based eye-contact training application.</div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
-  <section id="education">
-    <h2>Education</h2>
-    <div class="row">
-      <div class="when">2021 – Present</div>
-      <div class="what">
-        <h3>PhD, Neuroscience</h3>
-        <div class="where">Washington University in St. Louis — Advisor: Dr. Camillo Padoa-Schioppa</div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="when">2013 – 2017</div>
-      <div class="what">
-        <h3>BS, Neuroscience &amp; Behavioral Biology and Psychology</h3>
-        <div class="where">Emory University — Double major, graduated with High Honors</div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Skills</h2>
-    <div class="tags">
-      <span>Non-human primate &amp; mouse electrophysiology (multichannel recordings)</span>
-      <span>Spike sorting (Plexon OFS)</span>
-      <span>Mouse/rat in vivo calcium imaging</span>
-      <span>Optogenetics</span>
-      <span>Behavioral task design</span>
-      <span>Tracer injection surgery</span>
-      <span>MATLAB</span>
-      <span>Python (in progress)</span>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>c.heejae@wustl.edu<br>Department of Neuroscience, Washington University School of Medicine, St. Louis, MO</p>
-  </section>
+  <!-- ===================== CONTACT ===================== -->
+  <div class="page" id="contact">
+    <section>
+      <h2>Contact</h2>
+      <p>c.heejae@wustl.edu<br>Department of Neuroscience, Washington University School of Medicine, St. Louis, MO</p>
+    </section>
+  </div>
 
   <footer>© 2026 Heejae Choi</footer>
 
 </div>
+
+<script>
+  (function () {
+    var links = document.querySelectorAll('nav a[data-page]');
+    var pages = document.querySelectorAll('.page');
+    function show(id) {
+      var found = false;
+      pages.forEach(function (p) {
+        var on = p.id === id;
+        p.classList.toggle('active', on);
+        if (on) found = true;
+      });
+      if (!found) {
+        document.getElementById('profile').classList.add('active');
+        id = 'profile';
+      }
+      links.forEach(function (a) {
+        a.classList.toggle('on', a.dataset.page === id && id !== 'profile');
+      });
+      window.scrollTo(0, 0);
+    }
+    window.addEventListener('hashchange', function () {
+      show(location.hash.replace('#', '') || 'profile');
+    });
+    show(location.hash.replace('#', '') || 'profile');
+  })();
+</script>
 
 </body>
 </html>
