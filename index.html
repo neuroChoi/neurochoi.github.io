@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heejae Choi — Neuroscience PhD Student</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #FBFAF8;
+    --ink: #23282E;
+    --muted: #6A7178;
+    --accent: #1F6E5C;
+    --accent-soft: #E4EFEA;
+    --line: #E6E3DC;
+    --card: #FFFFFF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #15181B;
+      --ink: #E8E6E1;
+      --muted: #9AA1A8;
+      --accent: #5FB89C;
+      --accent-soft: #1E2B27;
+      --line: #2B3036;
+      --card: #1B1F23;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #15181B;
+    --ink: #E8E6E1;
+    --muted: #9AA1A8;
+    --accent: #5FB89C;
+    --accent-soft: #1E2B27;
+    --line: #2B3036;
+    --card: #1B1F23;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 740px; margin: 0 auto; padding: 0 24px; }
+
+  nav {
+    border-bottom: 1px solid var(--line);
+    position: sticky; top: 0;
+    background: var(--paper);
+    z-index: 10;
+  }
+  nav .wrap {
+    display: flex; gap: 22px; align-items: center;
+    padding-top: 14px; padding-bottom: 14px;
+    overflow-x: auto;
+  }
+  nav a {
+    color: var(--muted); text-decoration: none;
+    font-size: 0.9rem; font-weight: 500; white-space: nowrap;
+  }
+  nav a:first-child { color: var(--ink); font-weight: 600; margin-right: auto; }
+  nav a:hover { color: var(--accent); }
+
+  header.hero { padding: 64px 0 48px; }
+  .monogram {
+    width: 84px; height: 84px; border-radius: 50%;
+    background: var(--accent-soft); color: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 2rem; font-weight: 600;
+    margin-bottom: 24px;
+  }
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600; font-size: 2.6rem; line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+  }
+  .role { color: var(--muted); font-size: 1.02rem; margin-bottom: 4px; }
+  .role a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+  .links a {
+    font-size: 0.85rem; font-weight: 500;
+    color: var(--ink); text-decoration: none;
+    border: 1px solid var(--line); border-radius: 999px;
+    padding: 5px 14px; background: var(--card);
+  }
+  .links a:hover { border-color: var(--accent); color: var(--accent); }
+
+  section { padding: 40px 0; border-top: 1px solid var(--line); }
+  h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500; font-size: 1.45rem;
+    margin-bottom: 22px;
+  }
+  section p { margin-bottom: 14px; max-width: 62ch; }
+  section p:last-child { margin-bottom: 0; }
+  strong { font-weight: 600; }
+
+  .lede {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 1.28rem; line-height: 1.55; font-weight: 400;
+    max-width: 34ch;
+  }
+
+  .row {
+    display: grid; grid-template-columns: 130px 1fr;
+    gap: 18px; padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .row:last-child { border-bottom: none; }
+  .row .when { color: var(--muted); font-size: 0.88rem; padding-top: 2px; }
+  .row .what h3 { font-size: 1rem; font-weight: 600; margin-bottom: 2px; }
+  .row .what .where { color: var(--muted); font-size: 0.92rem; }
+  .row .what .detail { font-size: 0.94rem; margin-top: 6px; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tags span {
+    background: var(--accent-soft); color: var(--accent);
+    font-size: 0.85rem; font-weight: 500;
+    padding: 4px 12px; border-radius: 999px;
+  }
+
+  .note {
+    background: var(--accent-soft); border-radius: 10px;
+    padding: 14px 18px; font-size: 0.9rem; color: var(--ink);
+    margin-top: 24px;
+  }
+
+  footer { padding: 36px 0 48px; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--line); }
+
+  @media (max-width: 560px) {
+    h1 { font-size: 2.1rem; }
+    .row { grid-template-columns: 1fr; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top">Heejae</a>
+    <a href="#research">Research</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="wrap" id="top">
+
+  <header class="hero">
+    <div class="monogram">HC</div>
+    <h1>Heejae Choi</h1>
+    <p class="role">PhD Student in Neuroscience</p>
+    <p class="role"><a href="https://sites.wustl.edu/cpslab/" target="_blank" rel="noopener">Padoa-Schioppa Lab</a>, Washington University in St. Louis</p>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/heejae-choi-neuro/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/neuroChoi" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:c.heejae@wustl.edu">Email</a>
+    </div>
+  </header>
+
+  <section>
+    <p class="lede">I study how the primate brain computes the value of choice options — and where in the visual pathway that computation begins.</p>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <p>My dissertation asks whether the <strong>inferotemporal cortex (ITC)</strong> encodes offer value upstream of the <strong>orbitofrontal cortex (OFC)</strong> during economic choice. Using single-unit electrophysiology in macaques performing a two-alternative juice-choice task, I record from ITC and OFC to test where visual object identity is first transformed into a value signal.</p>
+    <p>In parallel, I characterize quantity and spatial tuning of anterior ITC neurons, examining how value-related signals interact with the region's canonical visual selectivity.</p>
+    <div class="tags">
+      <span>Neuroeconomics</span>
+      <span>NHP electrophysiology</span>
+      <span>Value-based decision making</span>
+      <span>OFC</span>
+      <span>Inferotemporal cortex</span>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="row">
+      <div class="when">2020 – 2021</div>
+      <div class="what">
+        <h3>Clinical Operations Associate</h3>
+        <div class="where">Celltrion Inc., Incheon, South Korea</div>
+        <div class="detail">Phase 3 clinical trial operations under GCP: protocol and SOP compliance, CRO oversight and progress monitoring, regulatory approval support, trial documentation and investigator meetings, and inspection readiness through study closeout.</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="when">2018 – 2019</div>
+      <div class="what">
+        <h3>Research Intern</h3>
+        <div class="where">Brain Science Institute, Korea Institute of Science and Technology (KIST), Seoul</div>
+        <div class="detail">In vivo deep-brain calcium imaging of GPe and STN in freely moving mice using a head-mounted miniaturized microscope; optogenetic behavioral experiments in a Parkinson's disease model; immunohistochemistry with confocal and two-photon imaging.</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="when">2015 – 2017</div>
+      <div class="what">
+        <h3>Honors Researcher &amp; Research Assistant</h3>
+        <div class="where">Translational Research in Affective Disorders Lab (Dr. Michael Treadway), Emory University</div>
+        <div class="detail">Human behavioral studies of model-based reinforcement learning and cost–benefit decision making; data analysis in MATLAB and R; honors thesis defended with high honors.</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="when">2015</div>
+      <div class="what">
+        <h3>Summer Research Intern</h3>
+        <div class="where">Clinical Cognitive Neuroscience Center, Seoul National University Hospital</div>
+        <div class="detail">ERP and fMRI studies in psychiatric and high-risk populations; MRI processing with FreeSurfer; independent research proposal on cerebellar volume in OCD.</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="when">2014</div>
+      <div class="what">
+        <h3>Summer Research Intern</h3>
+        <div class="where">Behavioral Psychology Lab, Yonsei University</div>
+        <div class="detail">Behavioral intervention research for autism spectrum disorders, including usability assessment of a smartphone-based eye-contact training application.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="row">
+      <div class="when">2021 – Present</div>
+      <div class="what">
+        <h3>PhD, Neuroscience</h3>
+        <div class="where">Washington University in St. Louis — Advisor: Dr. Camillo Padoa-Schioppa</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="when">2013 – 2017</div>
+      <div class="what">
+        <h3>BS, Neuroscience &amp; Behavioral Biology and Psychology</h3>
+        <div class="where">Emory University — Double major, graduated with High Honors</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="tags">
+      <span>Non-human primate &amp; mouse electrophysiology (multichannel recordings)</span>
+      <span>Spike sorting (Plexon OFS)</span>
+      <span>Mouse/rat in vivo calcium imaging</span>
+      <span>Optogenetics</span>
+      <span>Behavioral task design</span>
+      <span>Tracer injection surgery</span>
+      <span>MATLAB</span>
+      <span>Python (in progress)</span>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>c.heejae@wustl.edu<br>Department of Neuroscience, Washington University School of Medicine, St. Louis, MO</p>
+  </section>
+
+  <footer>© 2026 Heejae Choi</footer>
+
+</div>
+
+</body>
+</html>
